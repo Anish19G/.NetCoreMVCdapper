@@ -1,0 +1,40 @@
+﻿@model DistrictInfoModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>District</h1>
+<a asp-action="Add">Edit</a>
+
+@if (Model != null)
+{
+    if (Model.DistrictsList.Count > 0)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>DId</th>
+                    <th>District Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.DistrictsList)
+                {
+                    <tr>
+                        <td>@item.DId</td>
+                        <td>@item.DName</td>
+                        <td>
+                            <a asp-action="AddEditDistrict" asp-route-id="@item.DId">Edit</a>
+                            <a asp-action="Details" asp-route-id="@item.DId">Edit</a>
+                            @*                            <a asp-action="Edit" asp-route-id="@item.DId">Edit</a>
+                *@
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    }
+}
+

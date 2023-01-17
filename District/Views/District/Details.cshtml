@@ -1,0 +1,28 @@
+﻿@model DistrictInfo
+@{
+    ViewData["Title"] = "AddEditDistrict";
+}
+
+<h1>Add/Edit District</h1>
+
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-md-3">District Name</div>
+        <div class="col-md-9">
+            @Model.DName
+        </div>
+    </div>
+
+</div>
+<form asp-action="Delete">
+    <div class="row mb-3">
+        <div class="col-md-3">
+            <input type="hidden" asp-for="DId" />
+        </div>
+        <div class="col-md-9">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <a asp-action="Index">Bact To List</a>
+        </div>
+    </div>
+</form>
+
